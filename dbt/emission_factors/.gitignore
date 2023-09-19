@@ -1,0 +1,6 @@
+target/
+dbt_packages/
+logs/
+python/utils/__pycache__/
+python/notebooks/*.tar.gz
+

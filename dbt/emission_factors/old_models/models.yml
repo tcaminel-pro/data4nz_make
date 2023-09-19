@@ -1,0 +1,78 @@
+version: 2
+
+models:
+  - name: ecoinvent_items
+    description: aligned EcoInvent dataset items
+    columns:
+      - name: id
+        description: unique id for the LCA item (entry in the dataset)
+        tests:
+          - unique
+          - not_null
+  - name: negaoctet_items
+    description: aligned NegaOcted dataset items
+    columns:
+      - name: id
+        description: unique id for the LCA item (entry in the dataset)
+        tests:
+          - unique
+          - not_null
+
+  - name: ef_merged_items
+    description: merged emission factors datasets
+    columns:
+      - name: id
+        description: unique id for the LCA item (entry in the dataset)
+        tests:
+          - not_null
+      - name: datasource
+        description: dataset from which the entry has been created
+      - name: item
+        description: short description of the item, created from the raw dataset
+        tests:
+          - not_null
+      - name: product_unit
+        description: unit of the item for which the emission factor are provided
+      - name: description
+        description: JSON with longer description of the item ; very data set specfic
+  - name: ef_merged_values
+    description: merged emission factors datasets  - values part
+    columns:
+      - name: id
+        description: id for the LCA item
+        tests:
+          - not_null
+          - relationships:
+              to: ref('ef_merged_items')
+              field: id
+      - name: emission_factor
+        description: name of the emission factor (normalized)
+        tests:
+          - not_null
+      - name: countries
+        description: countries for the emission factor value
+        tests:
+          - not_null
+      - name: value_ef
+        description: value of the emission factor in that geography
+      - name: meta
+        description: JSON field with dataset specific information
+  - name: opdata_ef_row
+    description: extracted emission factors, with pivot
+    tests:
+      # might not be always true in prod
+      - dbt_utils.equal_rowcount:
+          compare_model: ref('ef_requests')
+
+    #todo: add test to check pivot
+  - name: opdata_map_with_ef
+    description: outcome of the mapping between operational data (request for EF) and ref data
+    columns:
+      - name: dataset
+        tests:
+          - not_null
+      - name: geo_rank
+        tests:
+          - not_null
+
+  

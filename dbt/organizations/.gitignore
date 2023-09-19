@@ -1,0 +1,8 @@
+
+target/
+dbt_packages/
+logs/
+python/utils/__pycache__/
+
+python/utils/__pycache__/dbt_profile.cpython-310.pyc
+python/notebooks/index_*.tar.gz

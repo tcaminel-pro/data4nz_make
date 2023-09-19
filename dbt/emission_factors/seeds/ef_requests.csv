@@ -1,0 +1,4 @@
+op_name,db_item,db_id,area,factor,job_id
+dummy/dummy1,"test item 1",deadbeef-aaaa,GLO,0.5,dummy_job
+dummy/dummy2,"test item 2",deadbeef-bbbb,GLO,0.5,dummy_job
+dummy/dummy3,"test item 3",deadbeef-cccc,GLO,0.5,dummy_job

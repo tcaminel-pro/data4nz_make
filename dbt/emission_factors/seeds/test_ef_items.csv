@@ -1,0 +1,4 @@
+dataset_id,id,item,product_unit,description,text_index_col
+99,deadbeef-aaaa,test item 1,kg,"{""cas"":""000075-37-6"",""descr"":""test item 1 is bla bla bla bla bla bla bla blabla bla bla bla.""}",
+99,deadbeef-bbbb,test item 2,kg,"{""cas"":""000075-37-2"",""descr"":""test item 2 is bla bla bla bla bla bla bla blabla bla bla bla.""}",
+99,deadbeef-cccc,test item 3,kg,"{""cas"":""000075-37-5"",""descr"":""test item 3 is bla bla bla bla bla bla bla blabla bla bla bla.""}",

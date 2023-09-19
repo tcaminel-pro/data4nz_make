@@ -1,0 +1,6 @@
+version: 2
+
+models:
+  - name: oecd_gdp
+    description:  Lasted available countries GDP in dollar, from OECD data
+

@@ -1,0 +1,23 @@
+﻿name,unit,transformation,dataset,geo,factor_1,factor_2
+Diplexeur (1 sortie / 2 entrées),kg,"electronic component production, passive, unspecified",EcoInvent,GLO,6.3,0.1
+Diplexeur (1 sortie / 2 entrées),kg,"steel production, converter, low-alloyed",EcoInvent,GLO,6.3,0.9
+Diplexeur (1 sortie / 2 entrées),kg,"metal working, average for steel product manufacturing",EcoInvent,GLO,6.3,
+TMA (filtre passif) Electronic,kg,"electronic component production, passive, unspecified",EcoInvent,GLO,7.2,0.1
+TMA (filtre passif) metal,kg,"steel production, converter, low-alloyed",EcoInvent,GLO,7.2,0.9
+Bretelle 1/2 pouce SF (Super Flex),ml,"Cable, high current; production mix, at plant; RER 16mm²",NegaOctet,,144,
+Jarretière optique 2FO,ml,Optical fibre – 2 strands; RAS,NegaOctet,,156,
+Câble optique (24 fibres),ml,Optical fibre – 24 strands,NegaOctet,,141,
+Cable alimentation 16mm² (AE 48V vers hybride si ++ >20m),ml,"Cable, high current; production mix, at plant; RER 16mm² ?",NegaOctet,,67,
+Cable alimentation 10mm² (AE 48V vers hybride si >20m),ml,"Cable, high current; production mix, at plant; RER 16mm²",NegaOctet,,72,
+Cable alimentation 6mm²,ml,"Cable, high current; production mix, at plant; RER 16mm²",NegaOctet,,44,
+"Cable alimentation 2,5mm²",ml,"Cable, high current; production mix, at plant; RER 16mm²",NegaOctet,,6,
+"Cable alimentation 1,5mm²",ml,"Cable, high current; production mix, at plant; RER 16mm²",NegaOctet,,16,
+Câble RET (câble AISG2),ml,"Cable, high current; production mix, at plant; RER 16mm²",NegaOctet,,,
+éclairage,unit,Light; RAS,NegaOctet,,1,
+Boite à clés,kg,"steel production, chromium steel 18/8, hot rolled",EcoInvent,GLO,1,
+Boite à clés,unit,"metal working, average for chromium steel product manufacturing",EcoInvent,,1,
+Atelier Energie 16kW (dans Bcube ou rack) - transformateur,unit,Transformer; 1250 kVA,NegaOctet,,2,
+Coffret Hybride (énergie + optique) - BRAVO (NOE-WST-SWT),unit,Post; galvanized steel,NegaOctet,,40,
+Coffret Hybride (énergie + optique) - UTEL (IDF-CTA-MED),kg,"market for aluminium, wrought alloy",EcoInvent,GLO,15.2,
+TD (Tableau Divisionnaire) Extension Triphasé,kg,"metal working, average for aluminium product manufacturing",EcoInvent,GLO,10,
+TD (Tableau Divisionnaire) Extension Triphasé,unit,Electric panel,NegaOctet,,10,

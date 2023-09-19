@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "data4nz-make"
+version = "0.1.0"
+description = ""
+authors = ["Thierry Caminel <thierry.caminel@evien.com>"]
+readme = "README.md"
+packages = [{include = "data4nz_make"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pandas = "^1"
+pydantic = "^1"
+duckdb = "^0.7"
+devtools = "^0.11.0"
+openpyxl = "^3.1.2"
+unidecode = "^1.3.6"
+typer = "^0.9.0"
+translitcodec = "^0.7.0"
+sqlalchemy = "^1"
+sqlalchemy-utils = "^0.41.1"
+loguru = "^0.7.0"
+black = "^23.3.0"
+pg8000 = "^1.29.8"
+beautifulsoup4 = "^4.12.2"
+ruamel-yaml = "^0.17.32"
+dbt-postgres = "^1.5.2"
+dbt-duckdb = "^1.5.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,91 @@
+version: 2
+
+sources:
+#TODO: have specific schema and source name
+
+  - name: ref_data
+    schema: ref_data
+    loader: cmd_from_dbt_model.py
+    description: NZT reference data (external)
+    tables:
+      - name: EI3.9_Activities
+        description: EcoInvent database for method EF 3.0, converted from Excel to SQL
+      - name: EI3.9_Categories
+        description: EcoInvent database for method EF 3.0, converted from Excel to SQL
+      - name: NO22_Products
+        description: NegaOctet database converted from Excel to SQL
+      - name: NO22_Indicators
+      - name: Base_Carbone_V22   #TODO: add it's origin
+        description: Base Carbone (ADEME) (copied from Base_Carbone_V22.0.xlsx)
+# ####
+#       - name: defra_cf_2022
+#         description: DEFRA emission factors dowloaded from their site
+#         meta:
+#           origin: emission_factors/defra-ghg-conversion-factors-2022.csv
+      - name: EI3.9_Geographies
+        description: EcoInvent geographical zones
+        meta:
+          origin: emission_factors/Database-Overview-for-ecoinvent-v3.9.xlsx
+          read_args:
+            sheet_name: "Geographies" 
+            index_col: "Shortname" 
+      - name: EI3.9_Intermediate_Exchanges
+        description: EcoInvent products definition
+        meta:
+          origin: emission_factors/Database-Overview-for-ecoinvent-v3.9.xlsx
+          read_args:
+            sheet_name: "Intermediate Exchanges" 
+            index_col: "ID" 
+      - name: EI3.9_Elementary_Exchanges
+        description: EcoInvent products Elementary Exchanges definition
+        meta:
+          origin: emission_factors/Database-Overview-for-ecoinvent-v3.9.xlsx
+          read_args:
+            sheet_name: "Elementary Exchanges" 
+            index_col: "Name" 
+      - name: EI3.9_EN15804_AO
+        description: EcoInvent EN15804 AO mapping (with ISIC classification
+        meta:
+          origin: emission_factors/Database-Overview-for-ecoinvent-v3.9.xlsx
+          read_args:
+            sheet_name: "EN15804 AO" 
+            index_col: "Reference Product Name" 
+      - name: Carbon-minds_2022_EF3.0
+        description: Carbin-Minds LCA Database for chemicals and plastics
+        meta:
+          origin: emission_factors/productCF_complete_20220811131122_method_EFv3.0_EN15804.xlsx
+      # - name: CEDA_2022_Descriptions
+      #   description: CEDA Database Descriptions 
+      #   meta:
+      #     origin: emission_factors/CEDA Global Tool - 2022 - tcl.xlsx
+      #     read_args:
+      #       sheet_name: "CEDA Descriptions" 
+      #       index_col: "CEDA Code" 
+      #       usecols: "A:C" 
+      # - name: CEDA_2022_Lookup_US_USD
+      #   description: CEDA Database Lookup shhet for US / USD 
+      #   meta:
+      #     origin: emission_factors/CEDA Global Tool - 2022 - tcl.xlsx
+      #     read_args:
+      #       sheet_name: "Lookup" 
+      #       index_col: "CEDA Code" 
+      #       skiprows: "3" 
+      - name: Mapping_EI_CAS
+        description: Mapping EcoAct (Lau) between ecoinvent items and CAS code (chemical)
+        meta:
+          origin: ecoact/Mapping_v0.2_LT_220225.xlsx
+          read_args:
+            sheet_name: "CAS_Mappings" 
+      - name: Mapping_EI_chemical_description
+        description: Mapping EcoAct (Lau) between ecoinvent items and substance description
+        meta:
+          origin: ecoact/Mapping_v0.2_LT_220225.xlsx
+          read_args:
+            sheet_name: "non-CAS_Mappings" 
+      # - name : IEA_Emissions_Factors_2022
+      #   description: IEA  electricity and heat emissions factors 2022 (Summary)
+      #   meta: 
+      #     origin: "emission_factors/IEA Emissions Factors 2022.xls"
+      #     read_args:
+      #       sheet_name: "Summary"
+      #       skiprows: 2 

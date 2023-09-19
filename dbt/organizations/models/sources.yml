@@ -1,0 +1,55 @@
+version: 2
+sources:
+  - name: cdp_excel_files
+    loader: cdp_to_sql.py
+    schema: ref_data   
+    tables:
+    # TODO: put CDP file path here (as 'meta/origin')
+      - name : rows_2022
+      - name : rows_2021
+      - name : rows_2020
+      - name : rows_2019
+      - name : QuestionsList_values_2021
+      - name : CompanyData_2022
+      - name : CompanyData_2021
+      - name: Summary Data_2020
+      - name: Summary Data_2019
+
+  - name: cdp_scrapped_files
+    loader: simple_files_to_sql.py
+    schema: ref_data   
+    tables:
+      - name: cdp_rating_2021
+        description: CDP rating scrapped from web site with 'Instant Data Scraper' 
+        meta:
+          origin: cdp/cdp-rating-2021.csv
+      - name: cdp_rating_2022
+        description: CDP rating scrapped from web site with 'Instant Data Scraper' 
+        meta:
+          origin: cdp/cdp-rating-2022.csv
+     
+  - name: ref_data
+    schema: ref_data
+    loader: simple_files_to_sql.py
+    description: NZT reference data (external)
+    tables:
+      - name: sbt_compagnies_actions
+      - name: cdp_isin_facset
+        description: EcoAct maintained mapping for CDP, ISIN and FACTSET
+        meta:
+          origin: entities_mapping/cdp_isin_facset.csv
+      - name: ISIN_LEI_0822
+        description: ISIN LEU table downloaded from LEI web site in 08/2022
+        meta:
+          origin: entities_mapping/ISIN_LEI_20220824.csv
+          import_method: COPY
+      - name: sbt_compagnies_actions_2021
+        description: SBT compagnies actions, downloaded from their web site
+        meta:
+          origin: sbt/SBT2021-companies-taking-action.xlsx
+      - name: oecd_gdp_table_08_2022
+        description: GDP provided by OECD, dowwloaded from their site in 08/2022
+        meta:
+          origin: country_data/SNA_TABLE1_22082022112939147.csv
+          read_args:
+            index_col: "Country"

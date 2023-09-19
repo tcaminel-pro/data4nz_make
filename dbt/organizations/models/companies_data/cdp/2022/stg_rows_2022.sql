@@ -1,0 +1,1 @@
+select * from {{source("cdp_excel_files","rows_2022")}}
