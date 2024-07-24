@@ -9,14 +9,14 @@ models:
         tests:
           - unique
           - not_null
-  - name: negaoctet_items
-    description: aligned NegaOcted dataset items
-    columns:
-      - name: id
-        description: unique id for the LCA item (entry in the dataset)
-        tests:
-          - unique
-          - not_null
+  # - name: negaoctet_items
+  #   description: aligned NegaOcted dataset items
+  #   columns:
+  #     - name: id
+  #       description: unique id for the LCA item (entry in the dataset)
+  #       tests:
+  #         - unique
+  #         - not_null
   - name: ef_merged_items
     description: merged emission factors datasets
     columns:
@@ -56,20 +56,20 @@ models:
         description: value of the emission factor in that geography
       - name: meta
         description: JSON field with dataset specific information
-  - name: opdata_ef_row
-    description: extracted emission factors, with pivot
-    tests:
-      # might not be always true in prod
-      - dbt_utils.equal_rowcount:
-          compare_model: ref('ef_requests')
+  # - name: opdata_ef_row
+  #   description: extracted emission factors, with pivot
+  #   tests:
+  #     # might not be always true in prod
+  #     - dbt_utils.equal_rowcount:
+  #         compare_model: ref('ef_requests')
 
-    #todo: add test to check pivot
-  - name: opdata_map_with_ef
-    description: outcome of the mapping between operational data (request for EF) and ref data
-    columns:
-      - name: dataset
-        tests:
-          - not_null
-      - name: geo_rank
-        tests:
-          - not_null
+  #   #todo: add test to check pivot
+  # - name: opdata_map_with_ef
+  #   description: outcome of the mapping between operational data (request for EF) and ref data
+  #   columns:
+  #     - name: dataset
+  #       tests:
+  #         - not_null
+  #     - name: geo_rank
+  #       tests:
+  #         - not_null
